@@ -3,17 +3,27 @@ Vue.component('bar-chart', {
   props: ['data', 'options'],
   mounted () {
     var data = this.data || {
-      labels: [2007,2008,2009,2010,2011,2012,2013,2014,2015],
+      labels: ["AB","BC","MB","NB","NL","NS","NT","ON","PE","QC","SK","YT","NONE Specified"],
       datasets: [
         {
-          label: 'Rhinoceros tués chaque année par le braconnage en Afrique du Sud',
+          label: 'Nombre de fraudes',
           backgroundColor: '#f87979',
-          data: [13, null,122,333,448,668,1004,1215,749],
+          data: [92,60,18,10,6,11,0,348,2,189,25,0,6],
           datalabels: {
             align: 'end',
             anchor: 'end'
+          },
+        },
+        {
+          label: 'Montant des fraudes (en millier de dollars)',
+          backgroundColor: '#a6bddb',
+          data: [123.32958,44.33104,16.91827,8.76505,1.550,4.120,0,223.69222,0,116.52037,17.04626,0,11.181],
+          datalabels: {
+          align: 'end',
+          anchor: 'end',
+
           }
-        }
+        },
       ]
     };
 
@@ -22,7 +32,7 @@ Vue.component('bar-chart', {
         enabled: false
       },
       legend: {
-        display: false
+        display: true
       },
 			plugins: {
 				datalabels: {
@@ -39,6 +49,7 @@ Vue.component('bar-chart', {
           {
             display: false,
             ticks: {
+
               beginAtZero: true
             }
           }
