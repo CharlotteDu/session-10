@@ -1,4 +1,4 @@
-Vue.component('bar-chart', {
+Vue.component('multibar-chart', {
   extends: VueChartJs.Bar,
   props: ['data', 'options'],
   mounted () {
@@ -49,8 +49,6 @@ Vue.component('bar-chart', {
           {
             display: false,
             ticks: {
-              min : 0,
-              max : 400,
 
               beginAtZero: true
             }
@@ -58,8 +56,8 @@ Vue.component('bar-chart', {
         ],
         xAxes: [
           {
-            categoryPercentage: 0.8,
-            barPercentage: 0.9
+            categoryPercentage: 1,
+            barPercentage: 2/3
           }
         ]
       }
